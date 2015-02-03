@@ -21,9 +21,8 @@ class Product < ActiveRecord::Base
       field :name
       field :description
       field :price
-      field :images
       field :product_categories
+      field :images
     end
   end
-
 end

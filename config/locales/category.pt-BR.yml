@@ -1,7 +1,7 @@
 pt-BR:
   activerecord:
       models:
-        category: "Categoria"
+        category: "Categorias"
       attributes:
         category:
           id: "Código:"
