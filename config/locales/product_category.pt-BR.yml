@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+      models:
+        product_category: "Categoria"
+      attributes:
+        product_category:
+          product_id: "Produto"
+          category_id: "Categoria"
+          category: "Categoria"

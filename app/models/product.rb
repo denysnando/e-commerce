@@ -1,7 +1,9 @@
 class Product < ActiveRecord::Base
-  has_many :images,  inverse_of: :product
+  has_many :images, inverse_of: :product
+  has_many :product_categories, inverse_of: :product
 
   accepts_nested_attributes_for :images, :allow_destroy => true
+  accepts_nested_attributes_for :product_categories, :allow_destroy => true
 
   validates :name, presence: true
   validates :price, presence: true
@@ -20,6 +22,7 @@ class Product < ActiveRecord::Base
       field :description
       field :price
       field :images
+      field :product_categories
     end
   end
 

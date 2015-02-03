@@ -9,3 +9,4 @@ pt-BR:
           description: "Descrição:"
           price: "Valor de Venda:"
           images: "Imagens"
+          product_categories: "Categorias"
