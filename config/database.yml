@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: e-commerce
+  username: denys
+  password:
+  host: localhost
