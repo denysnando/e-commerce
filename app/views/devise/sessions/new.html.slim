@@ -1,0 +1,17 @@
+h2 Login
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  div
+    = f.label :email
+    .row
+      .col-md-4
+        = f.email_field :email, autofocus: true,:class=>'form-control'
+  br/
+  div
+    = f.label :password, "Senha"
+    .row
+      .col-md-4
+        = f.password_field :password, autocomplete: "off",:class=>'form-control'
+        br/
+  div
+    = f.submit "Login",  :class => 'btn btn-primary'
+

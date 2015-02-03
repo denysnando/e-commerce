@@ -16,9 +16,11 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'pry'
 gem 'awesome_print'
+gem 'bootstrap-sass', '~> 3.1.0.2'
 
 
 gem 'rails_admin'
+gem "compass-rails"
 #theme for rails_admin
 gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git', :branch => 'release_1.0'
 
