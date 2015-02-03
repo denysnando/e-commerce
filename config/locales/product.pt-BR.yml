@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+      models:
+        product: "Produtos"
+      attributes:
+        product:
+          id: "Código:"
+          name: "Nome:"
+          description: "Descrição:"
+          price: "Valor de Venda:"
+          images: "Imagens"

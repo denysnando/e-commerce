@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+      models:
+        image: "Imagem"
+      attributes:
+        image:
+          id: "Código"
+          asset: "Arquivo"
