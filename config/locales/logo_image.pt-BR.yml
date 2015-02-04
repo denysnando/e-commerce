@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+      models:
+        logo_image: "Imagem para Logo"
+      attributes:
+        logo_image:
+          id: "Código"
+          asset: "Arquivo"

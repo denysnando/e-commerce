@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+      models:
+        banner_image: "Imagens de Banner"
+      attributes:
+        banner_image:
+          id: "Código"
+          asset: "Arquivo"
