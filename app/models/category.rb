@@ -3,5 +3,12 @@ class Category < ActiveRecord::Base
 
   rails_admin do
    navigation_label 'Cadastros'
+   list do
+    field :id
+    field :name
+   end
+   edit do
+    field :name
+   end
   end
 end
