@@ -1,0 +1,36 @@
+pt-BR:
+  activerecord:
+      models:
+        company: "Empresa"
+      attributes:
+        company:
+          id: "Código"
+          name: "Razão Social:"
+          nick_name: "Fantasia:"
+          cnpj: "CNPJ:"
+          ie: "Inscrição Estadual:"
+          im: "Inscrição Municipal:"
+          state: "Estado:"
+          city: "Cidade:"
+          address: "Endereço:"
+          zipcode: "CEP:"
+          phone1: "Telefone:"
+          phone2: "Telefone:"
+          mobile1: "Celular:"
+          mobile2: "Celular:"
+          logo_image: "Imagem Logo"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
