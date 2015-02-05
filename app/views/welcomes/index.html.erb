@@ -1,330 +1,178 @@
 <% content_for :banners do %>
 <div class="container main-container">
-      <div class="row">
-        <!-- Slider -->
-        <div class="col-lg-12 col-md-12">
-          <div class="slider">
-            <ul class="bxslider">
-              <li>
-                <a href="index.html">
-                  <img src="images/banner_slider-3.jpg" alt=""/>
-                </a>
-              </li>
-              <li>
-                <a href="index.html">
-                  <img src="images/banner_slider-2.jpg" alt=""/>
-                </a>
-              </li>
-              <li>
-                <a href="index.html">
-                  <img src="images/banner_slider-1.jpg" alt=""/>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-<% end %>
-        <!-- Featured -->
-
-          <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12">
-
-              <!-- Categories -->
-              <div class="col-lg-12 col-md-12 col-sm-6">
-                <div class="no-padding">
-                  <span class="title">CATEGORIAS</span>
-                  <% @categories.each do |categories| %>
-                      <a href="catalogue.html" class="list-group-item"><%= categories.name %></a>
-                    <%end%>
-                </div>
-                <div class="list-group list-categ">
-                </div>
-              </div>
-              <!-- End Categories -->
-
-              <!-- Marca Populares -->
-              <div class="col-lg-12 col-md-12 col-sm-6">
-                <div class="no-padding">
-                  <span class="title">MARCAS POPULARES</span>
-                </div>
-                <div class="list-group list-categ">
-                  <a href="catalogue.html" class="list-group-item">Acessórios</a>
-                  <a href="catalogue.html" class="list-group-item">Gospel</a>
-                  <a href="catalogue.html" class="list-group-item">Pe. Reginaldo Manzotti</a>
-                  <a href="catalogue.html" class="list-group-item">Pe. Zezinho</a>
-                  <a href="catalogue.html" class="list-group-item">Pe. Evton</a>
-                  <a href="catalogue.html" class="list-group-item">Pe. Fabio de Melo</a>
-                </div>
-              </div>
-              <!-- End Marca Populares
-               -->
-
-              <!-- Best Seller -->
-              <div class="col-lg-12 col-md-12 col-sm-6">
-                <div class="no-padding">
-                  <span class="title">MAIS VENDIDOS</span>
-                </div>
-                <div class="hero-feature">
-                  <div class="thumbnail text-center">
-                    <a href="detail.html" class="link-p">
-                      <img src="images/product-8.jpg" alt="">
-                    </a>
-                    <div class="caption prod-caption">
-                      <h4><a href="detail.html">Penn State College T-Shirt</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                      <p>
-                        <div class="btn-group">
-                          <a href="#" class="btn btn-default">$ 528.96</a>
-                          <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                        </div>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="hero-feature hidden-sm">
-                  <div class="thumbnail text-center">
-                    <a href="detail.html" class="link-p">
-                      <img src="images/product-9.jpg" alt="">
-                    </a>
-                    <div class="caption prod-caption">
-                      <h4><a href="detail.html">Ohio State College T-Shirt</a></h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                      <p>
-                        <div class="btn-group">
-                          <a href="#" class="btn btn-default">$ 924.25</a>
-                          <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                        </div>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Best Seller -->
-
-            </div>
-
-        <div class="clearfix visible-sm"></div>
-
-        <div class="col-lg-9 col-md-9 col-sm-12">
-          <div class="col-lg-12 col-sm-12">
-            <span class="title">NOVOS PRODUTOS</span>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-2.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Age Of Wisdom Tan Graphic Tee</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 122.51</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-3.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Classic Laundry Green Graphic T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 628.96</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-4.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Disc Jockey Print T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 394.64</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-5.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Live Nation 3 Days of Peace and Music Carbon</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 428.96</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-6.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Live Nation ACDC Gray T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 428.96</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-7.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Live Nation Aerosmith Ivory T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 632.15</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Featured -->
-
-        <div class="clearfix visible-sm"></div>
-
-        <!-- Adidas Category -->
-        <div class="col-lg-9 col-md-9 col-sm-12">
-          <div class="col-lg-12 col-sm-12">
-            <span class="title">MAIS POPULARES  </span>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-2.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Age Of Wisdom Tan Graphic Tee</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 122.51</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-3.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Classic Laundry Green Graphic T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 628.96</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-4.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Disc Jockey Print T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 394.64</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <%=image_tag 'product-5.jpg' %>
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Live Nation 3 Days of Peace and Music Carbon</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 428.96</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-6.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Live Nation ACDC Gray T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 428.96</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-4 hero-feature text-center">
-            <div class="thumbnail">
-              <a href="detail.html" class="link-p">
-                <img src="images/product-7.jpg" alt="">
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="detail.html">Live Nation Aerosmith Ivory T-Shirt</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!</p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">$ 632.15</a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Adidas Category -->
+  <div class="row">
+    <!-- Slider -->
+    <div class="col-lg-12 col-md-12">
+      <div class="slider">
+        <ul class="bxslider" >
+          <li>
+            <a href="index.html">
+              <%=image_tag 'banner_slider-1.jpg'%>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <%=image_tag 'banner_slider-2.jpg'%>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <%=image_tag 'banner_slider-3.jpg'%>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
+  <% end %>
+  <!-- Featured -->
+
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+
+      <!-- Categories -->
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="no-padding">
+          <span class="title">CATEGORIAS</span>
+          <% @categories.each do |categories| %>
+          <a href="catalogue.html" class="list-group-item"><%= categories.name %></a>
+          <%end%>
+        </div>
+        <div class="list-group list-categ">
+        </div>
+      </div>
+      <!-- End Categories -->
+
+      <!-- Marca Populares -->
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="no-padding">
+          <span class="title">MARCAS POPULARES</span>
+        </div>
+        <div class="list-group list-categ">
+          <a href="catalogue.html" class="list-group-item">Acessórios</a>
+          <a href="catalogue.html" class="list-group-item">Gospel</a>
+          <a href="catalogue.html" class="list-group-item">Pe. Reginaldo Manzotti</a>
+          <a href="catalogue.html" class="list-group-item">Pe. Zezinho</a>
+          <a href="catalogue.html" class="list-group-item">Pe. Evton</a>
+          <a href="catalogue.html" class="list-group-item">Pe. Fabio de Melo</a>
+        </div>
+      </div>
+      <!-- End Marca Populares-->
+
+      <!-- Best Seller -->
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="no-padding">
+          <span class="title">MAIS VENDIDOS</span>
+        </div>
+        <div class="hero-feature">
+          <% @best_sellers.each do |best_seller| %>
+            <div class="thumbnail text-center">
+              <a href="detail.html" class="link-p">
+                <%=image_tag 'product-12.jpg'%>
+              </a>
+              <div class="caption prod-caption">
+                <h4><a href="detail.html"><%= best_seller.name %></a></h4>
+                <p><%= best_seller.description %></p>
+                <p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-default">R$ <%= best_seller.price %></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                  </div>
+                </p>
+              </div>
+            </div>
+            <%end%>
+        </div>
+        <div class="hero-feature hidden-sm">
+          <% @best_sellers.each do |best_seller| %>
+            <div class="thumbnail text-center">
+              <a href="detail.html" class="link-p">
+                <%=image_tag 'product-5.jpg'%>
+              </a>
+              <div class="caption prod-caption">
+                <h4><a href="detail.html"><%= best_seller.name %></a></h4>
+                <p><%= best_seller.description %></p>
+                <p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-default">R$ <%= best_seller.price %></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                  </div>
+                </p>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+      <!-- End Best Seller -->
+    </div>
+
+    <div class="clearfix visible-sm"></div>
+
+    <div class="col-lg-9 col-md-9 col-sm-12">
+      <div class="col-lg-12 col-sm-12">
+        <span class="title">NOVOS PRODUTOS</span>
+      </div>
+      <% @products.each do |products| %>
+        <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
+          <div class="thumbnail">
+              <a href="detail.html" class="link-p">
+                <%=image_tag 'product-2.jpg'%>
+              </a>
+              <div class="caption prod-caption">
+                <h4><a href="detail.html"><%= products.name %></a></h4>
+                <p><%= products.description %></p>
+                <p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-default">R$<%= products.price %></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                  </div>
+                </p>
+              </div>
+          </div>
+        </div>
+      <%end%>
+
+      <% @products.each do |products| %>
+        <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
+          <div class="thumbnail">
+              <a href="detail.html" class="link-p">
+                <%=image_tag 'product-8.jpg'%>
+              </a>
+              <div class="caption prod-caption">
+                <h4><a href="detail.html"><%= products.name %></a></h4>
+                <p><%= products.description %></p>
+                <p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-default">R$<%= products.price %></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                  </div>
+                </p>
+              </div>
+          </div>
+        </div>
+      <%end%>
+
+      <% @products.each do |products| %>
+        <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
+          <div class="thumbnail">
+              <a href="detail.html" class="link-p">
+                <%=image_tag 'product-8.jpg'%>
+              </a>
+              <div class="caption prod-caption">
+                <h4><a href="detail.html"><%= products.name %></a></h4>
+                <p><%= products.description %></p>
+                <p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-default">R$<%= products.price %></a>
+                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+                  </div>
+                </p>
+              </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+    <!-- End Best -->
+
+  </div>
+</div>
