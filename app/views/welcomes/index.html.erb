@@ -5,21 +5,13 @@
     <div class="col-lg-12 col-md-12">
       <div class="slider">
         <ul class="bxslider" >
-          <li>
-            <a href="index.html">
-              <%=image_tag 'banner_slider-1.jpg'%>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <%=image_tag 'banner_slider-2.jpg'%>
-            </a>
-          </li>
-          <li>
-            <a href="index.html">
-              <%=image_tag 'banner_slider-3.jpg'%>
-            </a>
-          </li>
+          <% @banners.each do |banners| %>
+            <li>
+              <a href="index.html">
+                <%= image_tag banners.banner_images.first.asset.url %>
+              </a>
+            </li>
+          <%end%>
         </ul>
       </div>
     </div>
@@ -116,7 +108,7 @@
         <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
           <div class="thumbnail">
               <a href="/details" class="link-p">
-                <%=image_tag 'product-2.jpg'%>
+                <%= image_tag products.images.first.asset.url %>
               </a>
               <div class="caption prod-caption">
                 <h4><a href="/details"><%= products.name %></a></h4>
@@ -136,7 +128,7 @@
         <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
           <div class="thumbnail">
               <a href="/details" class="link-p">
-                <%=image_tag 'product-8.jpg'%>
+                <%= image_tag products.images.first.asset.url %>
               </a>
               <div class="caption prod-caption">
                 <h4><a href="/details"><%= products.name %></a></h4>
@@ -156,7 +148,7 @@
         <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
           <div class="thumbnail">
               <a href="/details" class="link-p">
-                <%=image_tag 'product-8.jpg'%>
+                <%= image_tag products.images.first.asset.url %>
               </a>
               <div class="caption prod-caption">
                 <h4><a href="/details"><%= products.name %></a></h4>
