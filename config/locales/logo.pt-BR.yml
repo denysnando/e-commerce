@@ -1,9 +1,0 @@
-pt-BR:
-  activerecord:
-      models:
-        logo: "Logo"
-      attributes:
-        logo:
-          id: "Código"
-          name: "Descrição"
-          logo_images: "Imagem Logo"

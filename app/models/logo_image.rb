@@ -1,5 +1,5 @@
 class LogoImage < ActiveRecord::Base
-  belongs_to :logo
+  belongs_to :company
 
   has_attached_file :asset,
   :styles => {
