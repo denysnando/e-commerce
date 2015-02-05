@@ -1,17 +1,45 @@
-h2 Login
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  div
-    = f.label :email
-    .row
-      .col-md-4
-        = f.email_field :email, autofocus: true,:class=>'form-control'
-  br/
-  div
-    = f.label :password, "Senha"
-    .row
-      .col-md-4
-        = f.password_field :password, autocomplete: "off",:class=>'form-control'
-        br/
-  div
-    = f.submit "Login",  :class => 'btn btn-primary'
+.container
+  .row
+    .titles
+      .row.mt40
+        .col-lg-6.col-md-3.col-sm-12.col-xs-12
+          section.newcustomer
+            h2.heading2 Nova Conta
+            .loginbox
+              h4.heading4 Crie uma conta conosco e você poderá:
+              p • Finalizar rapidamente
+              p • Armazenar vários endereços de entrega
+              p • Acessar seus pedidos antigos
+              p • Acompanhar seus pedidos
+              p • Armazenar itens em sua lista de presente
+              a • Continue
+        .col-lg-6.col-md-3.col-sm-12.col-xs-12
+          section.returncustomer
+            h2.heading2 Acesse sua conta
+            .loginbox
+              form.form-vertical
+              = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+                fieldset
+                  .control-group
+                    = f.label :email
+                    .controls
+                      = f.email_field :email, autofocus: true,:class=>'form-control'
+                  .control-group
+                    = f.label :password, "Senha"
+                    .controls
+                      = f.password_field :password, autocomplete: "off",:class=>'form-control'
+                  a Esqueceu sua senha?
+                  br/
+                  br/
+                  = f.submit "Entrar",  :class => 'btn btn-primary'
+                  br/
+                  br/
+                  br/
+                  br/
+                  br/
+                  br/
+                  br/
+                  br/
+                  br/
+                  br/
 

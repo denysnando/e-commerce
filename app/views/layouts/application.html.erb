@@ -2,13 +2,12 @@
 <html>
 <head>
   <title>Procade Ecommerce</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-  <%= javascript_include_tag 'application'%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-
 <body>
   <header>
     <div class="container">
@@ -86,15 +85,14 @@
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Inicio', '' %></li>
-          <li><a href="">QUEM SOMOS?</a></li>
-          <li><a href="">SAC</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="">Meus Pedidos</a></li>
+          <li><a href="">Minha Conta</a></li>
           <li><a href="">CORRENTE DE ORAÇÃO</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if !user_signed_in? %>
-          <li><%= link_to 'Login', user_session_path %></li>
-          <li><%= link_to 'Cadastrar', '/admin' %></li>
+          <li><%= link_to 'Entrar ou Cadastrar', user_session_path %></li>
 
           <% end %>
           <% if user_signed_in? %>
@@ -114,50 +112,38 @@
 
 <%= yield %>
 </div>
-<footer id="footer">
+<footer id="footer" class="footer">
   <section class="footersocial">
     <div class="container">
-      <div class="col-lg-3 col-md-3 col-sm-6">
+      <div class="col-lg-4 col-md-3 col-sm-6">
         <div class="column">
-          <h4>Information</h4>
+          <h4>Informação</h4>
           <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="typography.html">Policy Privacy</a></li>
-            <li><a href="typography.html">Terms and Conditions</a></li>
-            <li><a href="typography.html">Shipping Methods</a></li>
+            <li><a href="about.html">Quem Somos</a></li>
+            <li><a href="typography.html">Corrente de Orações</a></li>
+            <li><a href="typography.html">Hospital do Câncer UOPECCAN</a></li>
           </ul>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-6">
+      <div class="col-lg-4 col-md-3 col-sm-6">
         <div class="column">
-          <h4>Categories</h4>
+          <h4>Atendimento ao Cliente</h4>
           <ul>
-            <li><a href="catalogue.html">Cras justo odio</a></li>
-            <li><a href="catalogue.html">Dapibus ac facilisis in</a></li>
-            <li><a href="catalogue.html">Morbi leo risus</a></li>
-            <li><a href="catalogue.html">Porta ac consectetur ac</a></li>
+            <% Company.all.each do |company| %>
+              <li><a href="#">Empresa: <%= company.nick_name %></a></li>
+              <li><a href="#">Telefone: <%= company.phone1 %></a></li>
+              <li><a href="#">E-mail: <%= company.email %></a></li>
+              <li><a href="#">Skype: <%= company.skype %></a></li>
+
           </ul>
         </div>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-6">
+      <div class="col-lg-4 col-md-3 col-sm-6">
         <div class="column">
-          <h4>Customer Service</h4>
-          <ul>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#">YM: erwin_heldy</a></li>
-            <li><a href="#">Telp: 087825376xxx</a></li>
-            <li><a href="#">Email: erwin.heldy@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6">
-        <div class="column">
-          <h4>Follow Us</h4>
+          <h4>Redes Sociais</h4>
           <ul class="social">
-            <li><a href="#">Google Plus</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">RSS Feed</a></li>
+            <li><a href="'<%= company.skype %>'">Facebook</a></li>
+            <%end%>
           </ul>
         </div>
       </div>
