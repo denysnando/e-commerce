@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require smoothproducts.min
-//= require jquery
 //= require jquery.blImageCenter
 //= require bootstrap.touchspin
-
-//= require mimity
+//= require jquery.bxslider.min
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require mimity
+//= require smoothproducts.min
+
+

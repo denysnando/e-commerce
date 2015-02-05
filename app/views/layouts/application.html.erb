@@ -4,8 +4,7 @@
   <title>Procade Ecommerce</title>
   <%= stylesheet_link_tag    '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-  <%= javascript_include_tag 'application'%>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -164,6 +163,10 @@
 <a href="#top" class="back-top text-center" onclick="$('body,html').animate({scrollTop:0},500); return false">
   <i class="fa fa-angle-double-up"></i>
 </a>
+
+<%= javascript_include_tag 'jquery'%>
+<%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+<%= javascript_include_tag 'application'%>
 
 </body>
 </html>
