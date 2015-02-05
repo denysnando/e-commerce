@@ -6,5 +6,17 @@ class User < ActiveRecord::Base
 
   rails_admin do
    navigation_label 'Cadastros'
+   list do
+     field :id
+     field :name
+     field :email
+     field :last_sign_in_at
+   end
+   edit do
+     field :name
+     field :email
+     field :password
+     field :password_confirmation
+   end
   end
 end
