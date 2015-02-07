@@ -16,6 +16,7 @@ class Product < ActiveRecord::Base
       field :name
       field :description
       field :price
+
     end
     edit do
       field :name
