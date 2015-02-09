@@ -1,0 +1,98 @@
+<div class="container main-container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+
+      <!-- Best Seller -->
+      <div class="col-lg-12 col-md-12 col-sm-12 visible-lg visible-md">
+        <div class="no-padding">
+          <span class="title">Mais Vendidos</span>
+        </div>
+        <% @best_sellers.each do |best_seller| %>
+        <div class="thumbnail text-center">
+          <%= link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work") %>
+          <div class="caption prod-caption">
+            <h4><a href="/details"><%= best_seller.name %></a></h4>
+            <p><%= best_seller.description %></p>
+            <p>
+              <div class="btn-group">
+                <a href="#" class="btn btn-default">R$ <%= best_seller.price %></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+              </div>
+            </p>
+          </div>
+        </div>
+        <%end%>
+        <% @best_sellers.each do |best_seller| %>
+        <div class="thumbnail text-center">
+          <%= link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work") %>
+          <div class="caption prod-caption">
+            <h4><a href="/details"><%= best_seller.name %></a></h4>
+            <p><%= best_seller.description %></p>
+            <p>
+              <div class="btn-group">
+                <a href="#" class="btn btn-default">R$ <%= best_seller.price %></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
+              </div>
+            </p>
+          </div>
+        </div>
+        <%end%>
+      </div>
+      <!-- End Best Seller -->
+
+    </div>
+
+    <div class="clearfix visible-sm"></div>
+
+    <!-- Product Detail -->
+    <div class="col-lg-9 col-md-9 col-sm-12">
+      <div class="col-lg-12 col-sm-12">
+        <span class="title"><%= @product.name%></span>
+      </div>
+      <div class="col-lg-12 col-sm-12 hero-feature">
+        <div class="sp-wrap">
+          <a href="<%=image_url @product.images.first.asset.url %>"><%= image_tag @product.images.first.asset.url %></a></a>
+          <a href="<%=image_url 'detail1.jpg'%>"><%= image_tag @product.images.last.asset.url %></a></a>
+          <a href="<%=image_url 'detail1.jpg'%>"><%= image_tag @product.images.first.asset.url %></a></a>
+          <a href="<%=image_url 'detail1.jpg'%>"><%= image_tag @product.images.first.asset.url %></a></a>
+        </div>
+        <h4><%= @product.name%></h4>
+        <hr/>
+        <div class="description-product">
+          <%= @product.description%>
+        </div>
+        <hr/>
+        <h3>R$ <%= @product.price %></h3>
+        <div class="input-qty-detail">
+          <input type="text" class="form-control input-qty text-center" value="1">
+          <button class="btn btn-primary pull-left">Adicionar no carrinho</button>
+        </div>
+        <br/>
+        <hr/>
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-lg-12 col-sm-12">
+        <span class="title">Produtos Relacionados</span>
+      </div>
+      <%@products.each do |products| %>
+      <div class="col-lg-4 col-sm-4 hero-feature text-center">
+        <div class="thumbnail">
+          <%= link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work") %>
+          <div class="caption prod-caption">
+            <h4><a href="detail.html"><%= products.name %> </a></h4>
+            <p><%= products.description %></p>
+            <p>
+              <div class="btn-group">
+                <a href="#" class="btn btn-default"><%= products.price %></a>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Comprar</a>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <%end%>
+    </div>
+    <!-- End Product Detail -->
+
+  </div>
+</div>

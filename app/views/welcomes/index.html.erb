@@ -56,12 +56,10 @@
         <div class="no-padding">
           <span class="title">MAIS VENDIDOS</span>
         </div>
+        <% @best_sellers.each do |best_seller| %>
         <div class="hero-feature">
-          <% @best_sellers.each do |best_seller| %>
             <div class="thumbnail text-center">
-              <a href="/details" class="link-p">
-                <%=image_tag 'product-12.jpg'%>
-              </a>
+            <%= link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work") %>
               <div class="caption prod-caption">
                 <h4><a href="/details"><%= best_seller.name %></a></h4>
                 <p><%= best_seller.description %></p>
@@ -73,27 +71,8 @@
                 </p>
               </div>
             </div>
-            <%end%>
         </div>
-        <div class="hero-feature hidden-sm">
-          <% @best_sellers.each do |best_seller| %>
-            <div class="thumbnail text-center">
-              <a href="/details" class="link-p">
-                <%=image_tag 'product-5.jpg'%>
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="/details"><%= best_seller.name %></a></h4>
-                <p><%= best_seller.description %></p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">R$ <%= best_seller.price %></a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          <%end%>
-        </div>
+        <%end%>
       </div>
       <!-- End Best Seller -->
     </div>
@@ -107,49 +86,7 @@
       <% @products.each do |products| %>
         <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
           <div class="thumbnail">
-              <a href="/details" class="link-p">
-                <%= image_tag products.images.first.asset.url %>
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="/details"><%= products.name %></a></h4>
-                <p><%= products.description %></p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">R$<%= products.price %></a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-          </div>
-        </div>
-      <%end%>
-
-      <% @products.each do |products| %>
-        <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
-          <div class="thumbnail">
-              <a href="/details" class="link-p">
-                <%= image_tag products.images.first.asset.url %>
-              </a>
-              <div class="caption prod-caption">
-                <h4><a href="/details"><%= products.name %></a></h4>
-                <p><%= products.description %></p>
-                <p>
-                  <div class="btn-group">
-                    <a href="#" class="btn btn-default">R$<%= products.price %></a>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Comprar</a>
-                  </div>
-                </p>
-              </div>
-          </div>
-        </div>
-      <%end%>
-
-      <% @products.each do |products| %>
-        <div class="col-lg-4 col-sm-4 hero-feature text-center" width="1">
-          <div class="thumbnail">
-              <a href="/details" class="link-p">
-                <%= image_tag products.images.first.asset.url %>
-              </a>
+            <%= link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work") %>
               <div class="caption prod-caption">
                 <h4><a href="/details"><%= products.name %></a></h4>
                 <p><%= products.description %></p>
@@ -165,6 +102,5 @@
       <%end%>
     </div>
     <!-- End Best -->
-
   </div>
 </div>

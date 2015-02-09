@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  root :to => 'welcomes#index'
+  resources :products
 
-  get 'details', to: 'details#index'
+  root :to => 'welcomes#index'
 
 end
