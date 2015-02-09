@@ -1,0 +1,75 @@
+
+<div class="container main-container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="no-padding">
+          <span class="title">Minha Conta</span>
+        </div>
+        <div class="list-group list-categ">
+          <a href="catalogue.html" class="list-group-item">Últimos Pedidos</a>
+          <a href="catalogue.html" class="list-group-item">Pedidos em Aberto</a>
+          <a href="catalogue.html" class="list-group-item">Pedidos entregues</a>
+          <a href="catalogue.html" class="list-group-item">Todos Pedidos</a>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix visible-sm"></div>
+
+    <!-- Cart -->
+    <div class="col-lg-9 col-md-9 col-sm-12">
+      <div class="col-lg-12 col-sm-12">
+        <span class="title">Carrinho de compra</span>
+      </div>
+      <div class="col-lg-12 col-sm-12 hero-feature">
+        <table class="table table-bordered tbl-cart">
+          <thead>
+            <tr>
+              <td class="hidden-xs">Image</td>
+              <td>Produto</td>
+              <td class="td-qty">Quantidade</td>
+              <td>Preço Unitário</td>
+              <td>Sub Total</td>
+              <td>Remover</td>
+            </tr>
+          </thead>
+          <tbody>
+          <% @purchase_order.purchase_order_items.each do |purchase| %>
+            <tr>
+              <td class="hidden-xs">
+                 <%= link_to( image_tag(purchase.product.images.first.asset.url, size: "60x60"), product_path(purchase.product.id), :class=>"work") %>
+             </td>
+           </td>
+           <td>
+            <%= purchase.product.name %>
+           </td>
+           <td>
+            <input type="text" name="" value="<%= purchase.amount %>" class="input-qty form-control text-center" />
+          </td>
+          <td class="price"> R$ <%= purchase.product.price %></td>
+          <td>R$ <%= purchase.sub_total_price %> </td>
+          <td class="text-center">
+            <a href="#" class="remove_cart" rel="2">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+          <tr>
+              <td colspan="5" align="right">Total</td>
+              <td class="total" colspan="2"><b><%= @purchase_order.total_price %></b>
+              </td>
+          </tr>
+        </tr>
+        <%end%>
+      </tbody>
+    </table>
+    <div class="btn-group btns-cart">
+      <button type="button" class="btn btn-primary" onclick="window.location='catalogue.html'"><i class="fa fa-arrow-circle-left"></i> Continuar Comprando</button>
+      <button type="button" class="btn btn-primary">Atualizar Carrinho</button>
+      <button type="button" class="btn btn-primary" onclick="window.location='checkout.html'">Finalizar compra <i class="fa fa-arrow-circle-right"></i></button>
+    </div>
+
+  </div>
+</div>
+<!-- End Cart -->
+</div>
+</div>
