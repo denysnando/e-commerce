@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :purchase_order
+
   rails_admin do
    navigation_label 'Cadastros'
    list do

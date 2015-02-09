@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :images, inverse_of: :product
   has_many :product_categories, inverse_of: :product
+  has_many :purchase_order_items
 
   accepts_nested_attributes_for :images, :allow_destroy => true
   accepts_nested_attributes_for :product_categories, :allow_destroy => true
@@ -16,7 +17,6 @@ class Product < ActiveRecord::Base
       field :name
       field :description
       field :price
-
     end
     edit do
       field :name
