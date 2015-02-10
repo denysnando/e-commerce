@@ -43,7 +43,7 @@
                 <%=  purchase.created_at.strftime("%d-%m-%Y %H:%M") %>
               </td>
               <td>
-                R<%= number_to_currency(purchase.total_price) %>
+                <%= number_to_currency(purchase.total_price) %>
               </td>
               <td>
               <%= link_to 'Visualizar', purchase_order_path(purchase) %>

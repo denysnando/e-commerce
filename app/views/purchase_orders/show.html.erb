@@ -46,8 +46,8 @@
            <td>
             <input type="text" name="" value="<%= purchase.amount %>" class="input-qty form-control text-center" />
           </td>
-          <td class="price"> R<%= number_to_currency(purchase.product.price) %></td>
-          <td>R<%= number_to_currency(purchase.sub_total_price) %> </td>
+          <td class="price"> <%= number_to_currency(purchase.product.price) %></td>
+          <td><%= number_to_currency(purchase.sub_total_price) %> </td>
           <td class="text-center">
             <a href="#" class="remove_cart" rel="2">
               <i class="fa fa-trash-o"></i>
@@ -55,7 +55,7 @@
           </td>
           <tr>
               <td colspan="5" align="right">Total</td>
-              <td class="total" colspan="2"><b>R<%= number_to_currency(@purchase_order.total_price) %></b>
+              <td class="total" colspan="2"><b><%= number_to_currency(@purchase_order.total_price) %></b>
               </td>
           </tr>
         </tr>
