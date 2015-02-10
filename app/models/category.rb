@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
-  has_many :product_category
+  has_many :product_categories
+  has_many :products, through: :product_categories
 
   rails_admin do
    navigation_label 'Cadastros'

@@ -27,7 +27,7 @@
         <div class="no-padding">
           <span class="title">CATEGORIAS</span>
           <% @categories.each do |categories| %>
-          <a href="catalogue.html" class="list-group-item"><%= categories.name %></a>
+          <%=link_to(categories.name, category_path(categories), :class=> "list-group-item")%>
           <%end%>
         </div>
         <div class="list-group list-categ">
