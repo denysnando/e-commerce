@@ -51,10 +51,9 @@
       </div>
       <div class="col-lg-12 col-sm-12 hero-feature">
         <div class="sp-wrap">
-          <a href="<%=image_url @product.images.first.asset.url %>"><%= image_tag @product.images.first.asset.url %></a></a>
-          <a href="<%=image_url 'detail1.jpg'%>"><%= image_tag @product.images.last.asset.url %></a></a>
-          <a href="<%=image_url 'detail1.jpg'%>"><%= image_tag @product.images.first.asset.url %></a></a>
-          <a href="<%=image_url 'detail1.jpg'%>"><%= image_tag @product.images.first.asset.url %></a></a>
+          <% @product.images.each do |image| %>
+            <%= link_to image_tag(image.asset.url(:medium)), image_url(image.asset.url(:original)) %>
+          <% end %>
         </div>
         <h4><%= @product.name%></h4>
         <hr/>
