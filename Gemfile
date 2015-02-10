@@ -16,7 +16,9 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'pry'
 gem 'awesome_print'
+gem 'will_paginate', '~> 3.0.6'
 
+#area admin
 gem 'rails_admin', '0.6.5'
 
 #theme for rails_admin
