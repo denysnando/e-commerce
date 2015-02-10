@@ -7,10 +7,18 @@ class PurchaseOrder < ActiveRecord::Base
 
   rails_admin do
     navigation_label 'Financeiro'
-    edit do
+    list do
+      field :id
       field :user
-      field :purchase_order_items
+      field :created_at do
+        strftime_format "%d-%m-%Y %H:%M"
+      end
       field :total_price
-    end
+   end
+   edit do
+    field :user
+    field :purchase_order_items
+    field :total_price
   end
+end
 end

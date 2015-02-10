@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+      models:
+        purchase_order_item: "Itens ordem de Compra"
+      attributes:
+        purchase_order_item:
+          id: "Código:"
+          sub_total_price: "Sub Total"
+          purchase_order: "Ordem de Compra"
+

@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+      models:
+        purchase_order: "Ordem de Compra"
+      attributes:
+        purchase_order:
+          id: "Código:"
+          user_id: "Usuário"
+          total_price: "Valor Total"
+          created_at: "Criado em"
+          purchase_order_items: "Itens Ordem de Compra"

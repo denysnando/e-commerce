@@ -40,7 +40,7 @@
                 <%= purchase.id %>
               </td>
               <td>
-                <%=  purchase.created_at.strftime("%d %B %y") %>
+                <%=  purchase.created_at.strftime("%d-%m-%Y %H:%M") %>
               </td>
               <td>
                 R$ <%= purchase.total_price %>
