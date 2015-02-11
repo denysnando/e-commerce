@@ -1,11 +1,7 @@
 E-commerce
 
 Em desenvolvimento, tende a ser um e-commerce genérico onde é possivel
-ser utilizada em diversos clientes.
-
-Gems Utilizadas
-* rails_admin
-
+ser utilizada em diversos clientes, usando area administrativa com rails_admin
 
 Cadastros Atuais.
 
@@ -24,6 +20,13 @@ Financeiro
 Tasks futuras
 - Alterando templates de erb para slim
 - Adicionar testes TDD-Rspec-Capybara
+- Adicionar Cancan para validação da area administrativa
 
+
+Uso:
+Rodar seed para criação do usuário administrador
+
+login: admin@admin.com
+senha: administrador
 
 
