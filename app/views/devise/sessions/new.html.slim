@@ -2,6 +2,7 @@
   .row
     .titles
       .row.mt40
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .col-lg-6.col-md-3.col-sm-12.col-xs-12
           section.newcustomer
             h2.heading2 Nova Conta
@@ -12,13 +13,12 @@
               p • Acessar seus pedidos antigos
               p • Acompanhar seus pedidos
               p • Armazenar itens em sua lista de presente
-              a • Continue
+              = link_to 'Continue', new_registration_path(resource_name)
         .col-lg-6.col-md-3.col-sm-12.col-xs-12
           section.returncustomer
             h2.heading2 Acesse sua conta
             .loginbox
               form.form-vertical
-              = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
                 fieldset
                   .control-group
                     = f.label :email

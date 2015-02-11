@@ -10,7 +10,7 @@
 <body>
   <header>
     <div class="container">
-    <div class="row">
+      <div class="row">
         <!-- Logo -->
         <div class="col-lg-4 col-md-3 hidden-sm hidden-xs">
           <div class="well logo">
@@ -85,7 +85,7 @@
         <ul class="nav navbar-nav">
           <li><a href="/">Inicio</a></li>
           <li><%= link_to 'Meus Pedidos', purchase_orders_path %></li>
-          <li><a href="">Minha Conta</a></li>
+          <li><%= link_to 'Minha conta', edit_user_registration_path %></li>
           <li><a href="">CORRENTE DE ORAÇÃO</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -128,10 +128,10 @@
           <h4>Atendimento ao Cliente</h4>
           <ul>
             <% Company.all.each do |company| %>
-              <li><a href="#">Empresa: <%= company.nick_name %></a></li>
-              <li><a href="#">Telefone: <%= company.phone1 %></a></li>
-              <li><a href="#">E-mail: <%= company.email %></a></li>
-              <li><a href="#">Skype: <%= company.skype %></a></li>
+            <li><a href="#">Empresa: <%= company.nick_name %></a></li>
+            <li><a href="#">Telefone: <%= company.phone1 %></a></li>
+            <li><a href="#">E-mail: <%= company.email %></a></li>
+            <li><a href="#">Skype: <%= company.skype %></a></li>
 
           </ul>
         </div>

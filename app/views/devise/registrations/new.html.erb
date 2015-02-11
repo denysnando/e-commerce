@@ -1,42 +1,118 @@
-<h2>Novo Cliente</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= devise_error_messages! %>
-
-<div><%= f.label :name, "Nome" %><br />
+<div class="container main-container">
   <div class="row">
-    <div class="col-md-4">
-      <%= f.text_field :name, autofocus: true,:class=>'form-control'  %>
+    <div class="col-lg-12 col-md-3 col-sm-12">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+      <!-- Cart -->
+      <div class="col-lg-12 col-md-9 col-sm-12">
+        <div class="col-lg-12 col-sm-12">
+          <span class="title">NOVO CLIENTE</span>
+        </div>
+        <div class="col-lg-12 col-sm-12 hero-feature">
+         <table class="table table-bordered tbl-checkout">
+          <tbody>
+            <tr>
+              <td><%= f.label :name %></td>
+              <td>
+                <%= f.text_field :name, autofocus: true,:class=>'form-control' %>
+              </td>
+              <td>
+                <%= f.label :email %>
+              </td>
+              <td>
+                <%= f.text_field :email, :class=>'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.label :cpf %>
+              </td>
+              <td>
+                <%= f.text_field :cpf, :class=>'form-control' %>
+              </td>
+              <td>Telephone</td>
+              <td>
+                <input type="text" name="" class="form-control" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.label :zipcode %>
+              </td>
+              <td>
+                <%= f.text_field :zipcode, :class=>'form-control' %>
+              </td>
+              <td><%= f.label :street %></td>
+              <td>
+                <%= f.text_field :street, :class=>'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.label :number %>
+              </td>
+              <td>
+                <%= f.text_field :number, :class=>'form-control' %>
+              </td>
+              <td>
+                <%= f.label :district %>
+              </td>
+              <td>
+                <%= f.text_field :district, :class=>'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.label :state %>
+              </td>
+              <td>
+                <%= f.text_field :state, :class=>'form-control' %>
+              </td>
+              <td><%= f.label :city %></td>
+              <td>
+                <%= f.text_field :city, :class=>'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.label :complement %>
+              </td>
+              <td colspan="3">
+                <%= f.text_area :complement, :class=>'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              <%= f.label :fone %>
+              </td>
+              <td>
+                <%= f.text_field :fone, :class=>'form-control' %>
+              </td>
+              <td><%= f.label :mobile %></td>
+              <td>
+                <%= f.text_field :mobile, :class=>'form-control' %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.label :password %>
+              </td>
+              <td>
+                <%= f.password_field :password, :class=>'form-control' %>
+              </td>
+              <td><%= f.label :password_confirmation %></td>
+              <td>
+                <%= f.password_field :password_confirmation, :class=>'form-control' %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-group btns-cart">
+          <%= f.submit "Criar",  :class => 'btn btn-primary'%>
+        </div>
+      </div>
     </div>
+    <% end %>
+    <!-- End Cart -->
   </div>
 </div>
-
-<div><%= f.label :email %><br />
-  <div class="row">
-    <div class="col-md-4">
-      <%= f.email_field :email,:class=>'form-control' %>
-    </div>
-  </div>
-</div>
-
-<div><%= f.label :password, "Senha" %> <br />
-  <div class="row">
-    <div class="col-md-4">
-      <%= f.password_field :password, autocomplete: "off",:class=>'form-control'  %>
-    </div>
-  </div>
-</div>
-
-<div><%= f.label :password_confirmation, "Confirme sua senha" %><br />
-  <div class="row">
-    <div class="col-md-4">
-      <%= f.password_field :password_confirmation, autocomplete: "off",:class=>'form-control'  %>
-    </div>
-  </div>
-</div>
-</br>
-
-<div><%= f.submit "Ok",  :class => 'btn btn-primary'%></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
