@@ -93,9 +93,11 @@
           <li><%= link_to 'Entrar ou Cadastrar', user_session_path %></li>
 
           <% end %>
-          <% if user_signed_in? %>
-          <li><%= link_to 'Administrador', '/admin' %></li>
-          <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+          <% if user_signed_in? && current_user.admin? %>
+            <li><%= link_to 'Administrador', '/admin' %></li>
+          <% end %>
+          <% if user_signed_in?  %>
+            <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
           <% end %>
         </ul>
 
