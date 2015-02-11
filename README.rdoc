@@ -5,17 +5,17 @@ ser utilizada em diversos clientes, usando area administrativa com rails_admin
 
 Cadastros Atuais.
 
-*Empresa
-*Usuário
-*Produtos
-*Banners
-*Logo Empresa
-*Categorias
+- Empresa
+- Usuário
+- Produtos
+- Banners
+- Logo Empresa
+- Categorias
 
 
 Financeiro
 
-*Ordem de Compra
+- Ordem de Compra
 
 Tasks futuras
 - Alterando templates de erb para slim
@@ -24,9 +24,9 @@ Tasks futuras
 
 
 Uso:
-Rodar seed para criação do usuário administrador
+- Rodar seed para criação do usuário administrador
 
-login: admin@admin.com
-senha: administrador
+- login: admin@admin.com
+- senha: administrador
 
 
