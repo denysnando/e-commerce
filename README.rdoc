@@ -21,6 +21,8 @@ Tasks futuras
 - Alterando templates de erb para slim
 - Adicionar testes TDD-Rspec-Capybara
 - Adicionar Cancan para validação da area administrativa
+- Carrinho de compra
+- Cadastro de clientes
 
 
 Uso:
