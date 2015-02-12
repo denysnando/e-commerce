@@ -31,6 +31,7 @@
               <td>Data do Pedido</td>
               <td>Valor</td>
               <td>Status</td>
+              <td></td>
             </tr>
           </thead>
           <tbody>
@@ -46,7 +47,10 @@
                 <%= number_to_currency(purchase.total_price) %>
               </td>
               <td>
-              <%= link_to 'Visualizar', purchase_order_path(purchase) %>
+                <%= purchase.purchase_order_status.status %>
+              </td>
+              <td>
+                <%= link_to 'Visualizar', purchase_order_path(purchase) %>
               </td>
             </tr>
             <%end%>

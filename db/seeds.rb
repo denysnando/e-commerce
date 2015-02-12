@@ -7,4 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
     User.create :email => 'admin@admin.com', :name => 'admin', :password => 'administrador', :password_confirmation => 'administrador'
+    PurchaseOrderStatus.create :status => 'Aberta'
+    PurchaseOrderStatus.create :status => 'Finalizada'
+    PurchaseOrderStatus.create :status => 'Cancelada'
 
