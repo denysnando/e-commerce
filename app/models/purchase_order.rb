@@ -12,7 +12,6 @@ class PurchaseOrder < ActiveRecord::Base
   private
   def status_purchase_order!
     self.purchase_order_status_id = 1
-    binding.pry
   end
 
   def update_total
