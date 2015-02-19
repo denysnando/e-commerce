@@ -11,11 +11,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 
 gem 'simple_form'
-gem 'pry'
+
 gem 'awesome_print'
+
+gem 'state_machine', '~> 1.2.1', github: 'LiveTyping/state_machine'
 
 
 #area admin
@@ -30,3 +31,14 @@ gem 'puma'
 #extensions views
 gem "slim"
 gem "slim-rails", :require => false
+
+
+group :development, :test do
+  gem 'pry'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
