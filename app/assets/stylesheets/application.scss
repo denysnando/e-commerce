@@ -22,3 +22,13 @@
 }
 
 .copyrightbottom { background: #000000; padding: 15px 0; color: #969ba4 }
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}

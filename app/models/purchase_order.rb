@@ -9,6 +9,25 @@ class PurchaseOrder < ActiveRecord::Base
   before_save :status_purchase_order!
   before_save :update_total
 
+  state_machine :state, initial: :aberto do
+
+    event :read do
+      transition unread: :read
+    end
+
+    event :archive do
+      transition any => :archived
+    end
+
+    after_transition to: :read do |message|
+      message.read_at = Time.current
+    end
+
+    after_transition to: :archive do |message|
+      message.archived_at = Time.current
+    end
+  end
+
   private
   def status_purchase_order!
     self.purchase_order_status_id = 1
@@ -17,7 +36,6 @@ class PurchaseOrder < ActiveRecord::Base
   def update_total
     self.total_price = purchase_order_items.map(&:calc_sub_total).sum
   end
-
 
   rails_admin do
     navigation_label 'Financeiro'
