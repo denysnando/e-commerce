@@ -26,7 +26,7 @@ gem 'rails_admin', '0.6.5'
 gem 'rails_admin_flatly_theme', :git => 'git://github.com/konjoot/rails_admin_flatly_theme.git', :branch => 'release_1.0'
 
 #server
-gem 'puma'
+gem 'unicorn'
 
 #extensions views
 gem "slim"
