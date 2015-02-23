@@ -94,10 +94,10 @@
 
           <% end %>
           <% if user_signed_in? && current_user.admin? %>
-            <li><%= link_to 'Administrador', '/admin' %></li>
+          <li><%= link_to 'Administrador', '/admin' %></li>
           <% end %>
           <% if user_signed_in?  %>
-            <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
           <% end %>
         </ul>
 
@@ -109,9 +109,9 @@
 <!-- End Navigation -->
 
 <main class="Site-content">
-<%= yield :banners %>
+  <%= yield :banners %>
 
-<%= yield %>
+  <%= yield %>
 </main>
 </div>
 <footer id="footer" class="footer">
