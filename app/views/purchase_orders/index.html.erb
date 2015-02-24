@@ -47,7 +47,7 @@
                 <%= number_to_currency(purchase.total_price) %>
               </td>
               <td>
-                <%= purchase.purchase_order_status.status %>
+                <%= purchase.status %>
               </td>
               <td>
                 <%= link_to 'Visualizar', purchase_order_path(purchase) %>
