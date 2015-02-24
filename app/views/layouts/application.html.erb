@@ -44,22 +44,19 @@
                 <span class="pull-left">Carrinho de Compra: 2 item(s)</span>
                 <span class="pull-right"><i class="fa fa-caret-down"></i></span>
               </button>
+              <% PurchaseOrder.find(status: 'Aberto') do |purchase| %>
               <ul class="dropdown-menu cart-content" role="menu">
-                <li>
-                  <a href="detail.html">
-                    <b>Penn State College T-Shirt</b>
-                    <span>x1 $528.96</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="detail.html">
-                    <b>Live Nation ACDC Gray T-Shirt</b>
-                    <span>x1 $428.96</span>
-                  </a>
-                </li>
+                <% purchase.purchase_order_items.each do |p| %>
+                  <li>
+                    <b> <%= link_to(p.product.name, product_path(p.product), class: 'stand') %></b>
+                      <span class="stand-price">x<%= p.amount.round(0) %> <%= number_to_currency(p.product.price) %></span>
+                    </a>
+                  </li>
+                <%end%>
                 <li class="divider"></li>
-                <li><a href="cart.html">Total: $957.92</a></li>
+                <span class="stand"> <%= link_to 'Total: ' + number_to_currency(purchase.total_price),  purchase_order_path(purchase) %></span>
               </ul>
+              <%end%>
             </div>
           </div>
         </div>
