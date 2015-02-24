@@ -32,3 +32,22 @@
 .Site-content {
   flex: 1;
 }
+
+.btn {
+  height: 34px;
+  font: bold;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stand{
+  padding-left: 5px;
+}
+
+.stand-price{
+  padding-left: 10px;
+}
