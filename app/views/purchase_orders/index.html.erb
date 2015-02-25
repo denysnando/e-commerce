@@ -7,10 +7,9 @@
           <span class="title">Minha Conta</span>
         </div>
         <div class="list-group list-categ">
-          <a href="catalogue.html" class="list-group-item">Últimos Pedidos</a>
-          <a href="catalogue.html" class="list-group-item">Pedidos em Aberto</a>
-          <a href="catalogue.html" class="list-group-item">Pedidos entregues</a>
-          <a href="catalogue.html" class="list-group-item">Todos Pedidos</a>
+          <%=link_to('Pedidos em Abertos', purchase_orders_path(status: :Aberto), :class=> "list-group-item")%>
+          <%=link_to('Pedidos Finalizados', purchase_orders_path(status: :Entregue), :class=> "list-group-item")%>
+          <%=link_to('Todos Pedidos', purchase_orders_path, :class=> "list-group-item")%>
         </div>
       </div>
 
