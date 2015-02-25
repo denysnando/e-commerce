@@ -7,16 +7,16 @@
           <span class="title">Minha Conta</span>
         </div>
         <div class="list-group list-categ">
-          <a href="catalogue.html" class="list-group-item">Últimos Pedidos</a>
-          <a href="catalogue.html" class="list-group-item">Pedidos em Aberto</a>
-          <a href="catalogue.html" class="list-group-item">Pedidos entregues</a>
-          <a href="catalogue.html" class="list-group-item">Todos Pedidos</a>
+          <%=link_to('Pedidos em Abertos', purchase_orders_path(status: :Aberto), :class=> "list-group-item")%>
+          <%=link_to('Pedidos Finalizados', purchase_orders_path(status: :Entregue), :class=> "list-group-item")%>
+          <%=link_to('Todos Pedidos', purchase_orders_path, :class=> "list-group-item")%>
         </div>
       </div>
     </div>
     <div class="clearfix visible-sm"></div>
 
     <!-- Cart -->
+    <%= simple_form_for @purchase_order do |p| %>
     <div class="col-lg-9 col-md-9 col-sm-12">
       <div class="col-lg-12 col-sm-12">
         <span class="title">Carrinho de compra</span>
@@ -34,41 +34,47 @@
             </tr>
           </thead>
           <tbody>
-          <% @purchase_order.purchase_order_items.each do |purchase| %>
-            <tr>
-              <td class="hidden-xs">
-                 <%= link_to( image_tag(purchase.product.images.first.asset.url, size: "60x60"), product_path(purchase.product.id), :class=>"work") %>
-             </td>
-           </td>
-           <td>
-            <%= purchase.product.name %>
-           </td>
-           <td>
-            <input type="text" name="" value="<%= purchase.amount %>" class="input-qty form-control text-center" />
-          </td>
-          <td class="price"> <%= number_to_currency(purchase.product.price) %></td>
-          <td><%= number_to_currency(purchase.sub_total_price) %> </td>
-          <td class="text-center">
-            <a href="#" class="remove_cart" rel="2">
-              <i class="fa fa-trash-o"></i>
-            </a>
-          </td>
+          <%= p.simple_fields_for :purchase_order_items do |f| %>
+          <%= f.input :product_id, as: :hidden, input_html: {value: f.object.product_id}  %>
+          <%= f.input :_id, as: :hidden, input_html: {value: f.object.id}  %>
+          <%= f.input :_destroy, as: :hidden, input_html: {value: false}  %>
           <tr>
-              <td colspan="5" align="right">Total</td>
-              <td class="total" colspan="2"><b><%= number_to_currency(@purchase_order.total_price) %></b>
-              </td>
-          </tr>
+            <td class="hidden-xs">
+             <%= link_to( image_tag(f.object.product.images.first.asset.url, size: "60x60"),
+             product_path(f.object.product.id), :class=>"work") %>
+           </td>
+         </td>
+         <td>
+          <%= f.object.product.name %>
+        </td>
+        <td>
+          <%= f.input :amount, label: false, input_html: {class:'input-qty form-control text-center'}  %>
+
+        </td>
+        <td class="price"> <%= number_to_currency(f.object.product.price) %></td>
+        <td><%= number_to_currency(f.object.sub_total_price) %> </td>
+        <td class="text-center">
+          <a href="#" class="remove_cart" rel="2">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
         </tr>
         <%end%>
-      </tbody>
-    </table>
-    <div class="btn-group btns-cart">
-      <button type="button" class="btn btn-primary" onclick="window.location='catalogue.html'"><i class="fa fa-arrow-circle-left"></i> Continuar Comprando</button>
-      <button type="button" class="btn btn-primary">Atualizar Carrinho</button>
-      <button type="button" class="btn btn-primary" onclick="window.location='checkout.html'">Finalizar compra <i class="fa fa-arrow-circle-right"></i></button>
-    </div>
-
+        <tr>
+          <td colspan="5" align="right">Total</td>
+          <td class="total" colspan="2"><b><%= number_to_currency(@purchase_order.total_price) %></b>
+          </td>
+        </tr>
+      </tr>
+    </tbody>
+  </table>
+  <div class="btn-group btns-cart">
+    <button type="button" class="btn btn-primary" onclick="window.location='catalogue.html'"><i class="fa fa-arrow-circle-left"></i> Continuar Comprando</button>
+    <%= p.button :submit, 'Update Carrinho', :class => "btn btn-primary" %>
+    <button type="button" class="btn btn-primary" onclick="window.location='checkout.html'">Finalizar compra <i class="fa fa-arrow-circle-right"></i></button>
   </div>
+  <%end%>
+</div>
 </div>
 <!-- End Cart -->
 </div>

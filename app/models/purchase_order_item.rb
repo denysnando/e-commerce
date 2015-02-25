@@ -3,7 +3,7 @@ class PurchaseOrderItem < ActiveRecord::Base
   belongs_to :product
 
   def calc_sub_total
-    amount * sub_total_price
+    amount * sub_total_price.to_f
   end
 
   rails_admin do
