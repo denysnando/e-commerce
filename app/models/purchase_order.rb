@@ -14,7 +14,7 @@ class PurchaseOrder < ActiveRecord::Base
   end
 
   def update_total
-    self.total_price = purchase_order_items.map(&:calc_sub_total).sum
+    self.total_price = purchase_order_items.map(&:update_sub_total).sum
   end
 
   rails_admin do
