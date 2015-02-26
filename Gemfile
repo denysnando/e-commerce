@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+Eusource 'https://rubygems.org'
 
 gem 'paperclip'
 gem 'devise'
@@ -16,7 +16,8 @@ gem 'simple_form'
 
 gem 'awesome_print'
 
-gem 'state_machine', '~> 1.2.1', github: 'LiveTyping/state_machine'
+#test in future
+#gem 'state_machine', '~> 1.2.1', github: 'LiveTyping/state_machine'
 
 
 #area admin
