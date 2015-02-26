@@ -1,4 +1,4 @@
-Eusource 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'paperclip'
 gem 'devise'
