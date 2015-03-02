@@ -1,0 +1,38 @@
+.container.main-container
+  .row
+    .col-lg-3.col-md-3.col-sm-12
+      .col-lg-12.col-md-12.col-sm-6
+        .no-padding
+          span.title Minha Conta
+        .list-group.list-categ
+          = link_to('Pedidos em Abertos', purchase_orders_path(status: :Aberto), :class=> "list-group-item")
+          = link_to('Pedidos Finalizados', purchase_orders_path(status: :Entregue), :class=> "list-group-item")
+          = link_to('Todos Pedidos', purchase_orders_path, :class=> "list-group-item")
+    .clearfix.visible-sm
+    /! Cart
+    .col-lg-9.col-md-9.col-sm-12
+      .col-lg-12.col-sm-12
+        span.title Meus Pedidos
+      .col-lg-12.col-sm-12.hero-feature
+        table.table.table-bordered.tbl-cart
+          thead
+            tr
+              td.hidden-xs Número do Pedido
+              td Data do Pedido
+              td Valor
+              td Status
+              td
+          tbody
+            - @purchase_orders.each do |purchase|
+              tr
+                td
+                  = purchase.id
+                td
+                  = purchase.created_at.strftime("%d-%m-%Y %H:%M")
+                td
+                  = number_to_currency(purchase.total_price)
+                td
+                  = purchase.status
+                td
+                  = link_to 'Visualizar', purchase_order_path(purchase)
+    /! End Cart

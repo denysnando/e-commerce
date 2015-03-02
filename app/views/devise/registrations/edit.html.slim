@@ -1,0 +1,88 @@
+.container.main-container
+  .row
+    .col-lg-12.col-md-3.col-sm-12
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = devise_error_messages!
+        .col-lg-3.col-md-3.col-sm-12
+          .col-lg-12.col-md-12.col-sm-6
+            .no-padding
+              span.title Minha Conta
+            .list-group.list-categ
+              a.list-group-item href=""  Editar conta
+              a.list-group-item href=""  Cancelar Conta
+              = link_to('Meus Pedidos', purchase_orders_path, :class=> "list-group-item")
+        .clearfix.visible-sm
+        /! Cart
+        .col-lg-9.col-md-9.col-sm-12
+          .col-lg-12.col-sm-12
+            span.title EDITAR CONTA
+          .col-lg-12.col-sm-12.hero-feature
+            table.table.table-bordered.tbl-checkout
+              tbody
+                tr
+                  td= f.label :name
+                  td
+                    = f.text_field :name, autofocus: true,:class=>'form-control'
+                  td
+                    = f.label :cpf
+                  td
+                    = f.text_field :cpf, :class=>'form-control'
+                tr
+                  td
+                    = f.label :zipcode
+                  td
+                    = f.text_field :zipcode, :class=>'form-control'
+                  td= f.label :street
+                  td
+                    = f.text_field :street, :class=>'form-control'
+                tr
+                  td
+                    = f.label :number
+                  td
+                    = f.text_field :number, :class=>'form-control'
+                  td
+                    = f.label :district
+                  td
+                    = f.text_field :district, :class=>'form-control'
+                tr
+                  td
+                    = f.label :state
+                  td
+                    = f.text_field :state, :class=>'form-control'
+                  td= f.label :city
+                  td
+                    = f.text_field :city, :class=>'form-control'
+                tr
+                  td
+                    = f.label :complement
+                  td colspan="3" 
+                    = f.text_area :complement, :class=>'form-control'
+                tr
+                  td
+                    = f.label :fone
+                  td
+                    = f.text_field :fone, :class=>'form-control'
+                  td= f.label :mobile
+                  td
+                    = f.text_field :mobile, :class=>'form-control'
+                tr
+                  td
+                    = f.label :email
+                  td
+                    = f.text_field :email, :class=>'form-control'
+                  td
+                    = f.label :current_password
+                  td
+                    = f.password_field :current_password, :class=>'form-control'
+                tr
+                  td
+                    = f.label :password
+                  td
+                    = f.password_field :password, :class=>'form-control'
+                  td
+                    = f.label :password_confirmation
+                  td
+                    = f.password_field :password_confirmation, :class=>'form-control'
+            .btn-group.btns-cart
+              = f.submit "Update",  :class => 'btn btn-primary'
+      /! End Cart

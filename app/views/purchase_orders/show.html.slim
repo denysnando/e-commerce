@@ -1,0 +1,58 @@
+.container.main-container
+  .row
+    .col-lg-3.col-md-3.col-sm-12
+      .col-lg-12.col-md-12.col-sm-6
+        .no-padding
+          span.title Minha Conta
+        .list-group.list-categ
+          = link_to('Pedidos em Abertos', purchase_orders_path(status: :Aberto), :class=> "list-group-item")
+          = link_to('Pedidos Finalizados', purchase_orders_path(status: :Entregue), :class=> "list-group-item")
+          = link_to('Todos Pedidos', purchase_orders_path, :class=> "list-group-item")
+    .clearfix.visible-sm
+    /! Cart
+    = simple_form_for @purchase_order do |p|
+      .col-lg-9.col-md-9.col-sm-12
+        .col-lg-12.col-sm-12
+          span.title Carrinho de compra
+        .col-lg-12.col-sm-12.hero-feature
+          table.table.table-bordered.tbl-cart
+            thead
+              tr
+                td.hidden-xs Image
+                td Produto
+                td.td-qty Quantidade
+                td Preço Unitário
+                td Sub Total
+                td Remover
+            tbody
+              = p.simple_fields_for :purchase_order_items do |f|
+                = f.input :product_id, as: :hidden, input_html: {value: f.object.product_id}
+                = f.input :_id, as: :hidden, input_html: {value: f.object.id}
+                = f.input :_destroy, as: :hidden, input_html: {value: false}
+                tr
+                  td.hidden-xs
+                    = link_to( image_tag(f.object.product.images.first.asset.url, size: "60x60"), product_path(f.object.product.id), :class=>"work")
+                  td
+                    = f.object.product.name
+                  td
+                    = f.input :amount, label: false, input_html: {class:'input-qty form-control text-center'}
+                  td.price
+                    = number_to_currency(f.object.product.price)
+                  td
+                    = number_to_currency(f.object.sub_total_price)
+                  td.text-center
+                    a.remove_cart href="#" rel="2"
+                      i.fa.fa-trash-o
+              tr
+                td align="right" colspan="5"  Total
+                td.total colspan="2"
+                  b= number_to_currency(@purchase_order.total_price)
+          .btn-group.btns-cart
+            button.btn.btn-primary type="button"
+              i.fa.fa-arrow-circle-left
+              | Continuar Comprando
+            = p.button :submit, 'Update Carrinho', :class => "btn btn-primary"
+            button.btn.btn-primary type="button"
+              | Finalizar compra
+              i.fa.fa-arrow-circle-right
+      /! End Cart

@@ -9,6 +9,13 @@ class PurchaseOrderItemsController < ApplicationController
     @purchase_order_item = PurchaseOrderItem.find(params[:id])
   end
 
+   def create
+     @purchase_order = PurchaseOrder.find(params[:id])
+     if @purchase_order.size > 0
+       redirect_to purchase_order_path(@purchase_order)
+    end
+  end
+
   private
   def purchase_params
     params.require(:purchase_order).permit(:product_id, :amount, :sub_total_price,

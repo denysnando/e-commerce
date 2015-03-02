@@ -1,0 +1,128 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Procade Ecommerce
+    = stylesheet_link_tag    '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body.Site
+    header
+      .container
+        .row
+          /! Logo
+          .col-lg-4.col-md-3.hidden-sm.hidden-xs
+            .well.logo
+              a href="/"
+                = image_tag 'ProcadeLogo.png'
+                span Loja online
+          /! End Logo
+          /! Search Form
+          .col-lg-5.col-md-5.col-sm-7.col-xs-12
+            .well
+              form action=""
+                .input-group
+                  input.form-control.input-search placeholder=("Digite algo para pesquisar:") type="text" /
+                  span.input-group-btn
+                    button.btn.btn-default.no-border-left type="submit"
+                      i.fa.fa-search
+          /! End Search Form
+          /! Shopping Cart List
+          .col-lg-3.col-md-4.col-sm-5
+            .well
+              .btn-group.btn-group-cart
+                - PurchaseOrder.find(status: 'Aberto') do |purchase|
+                  button.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button"
+                    span.pull-left
+                      i.fa.fa-shopping-cart.icon-cart
+                    span.pull-left
+                      | Carrinho de Compra: #{purchase.purchase_order_items.count} item(s)
+                    span.pull-right
+                      i.fa.fa-caret-down
+                  ul.dropdown-menu.cart-content role="menu"
+                    - purchase.purchase_order_items.each do |p|
+                      li
+                        b
+                          = link_to(p.product.name, product_path(p.product), class: 'stand')
+                        span.stand-price
+                          | x#{p.amount.round(0)} #{number_to_currency(p.product.price)}
+                    li.divider
+                    span.stand
+                      = link_to 'Total: ' + number_to_currency(purchase.total_price),  purchase_order_path(purchase)
+          /! End Shopping Cart List
+    /! Navigation
+    nav.navbar.navbar-inverse role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          /! text logo on mobile view
+          a.navbar-brand.visible-xs href="index.html"  Mimity Online Shop
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav
+            li
+              a href="/"  Inicio
+            li= link_to 'Meus Pedidos', purchase_orders_path
+            li= link_to 'Minha conta', edit_user_registration_path
+            li
+              a href=""  CORRENTE DE ORAÇÃO
+          ul.nav.navbar-nav.navbar-right
+            - if !user_signed_in?
+              li= link_to 'Entrar ou Cadastrar', user_session_path
+            - if user_signed_in? && current_user.admin?
+              li= link_to 'Administrador', '/admin'
+            - if user_signed_in?
+              li= link_to 'Sair', destroy_user_session_path, :method => :delete
+    /! End Navigation
+    main.Site-content
+      = yield :banners
+      = yield
+    footer#footer.footer
+      section.footersocial
+        .container
+          .col-lg-4.col-md-3.col-sm-6
+            .column
+              h4 Informação
+              ul
+                li
+                  a href="about.html"  Quem Somos
+                li
+                  a href="typography.html"  Corrente de Orações
+                li
+                  a href="typography.html"  Hospital do Câncer UOPECCAN
+          .col-lg-4.col-md-3.col-sm-6
+            .column
+              h4 Atendimento ao Cliente
+              ul
+                - Company.all.each do |company|
+                  li
+                    a href="#"
+                      | Empresa: #{company.nick_name}
+                  li
+                    a href="#"
+                      | Telefone: #{company.phone1}
+                  li
+                    a href="#"
+                      | E-mail: #{company.email}
+                  li
+                    a href="#"
+                      | Skype: #{company.skype}
+          .col-lg-4.col-md-3.col-sm-6
+            .column
+              h4 Redes Sociais
+              ul.social
+                li
+                  a href="#"
+      section.copyrightbottom
+        .container
+          .row
+            .pull-left Direitos Autorais © 2015. Direitos Reservados
+            .pull-right Desenvolvido por Denys Santos
+    a.back-top.text-center href="#top" onclick="$('body,html').animate({scrollTop:0},500); return false"
+      i.fa.fa-angle-double-up
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'
+    = javascript_include_tag 'application'

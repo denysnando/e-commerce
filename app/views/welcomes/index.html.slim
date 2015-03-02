@@ -1,0 +1,59 @@
+- content_for :banners do
+  .container.main-container
+    .row
+      /! Slider
+      .col-lg-12.col-md-12
+        .slider
+          ul.bxslider
+            - @banners.each do |banners|
+              li
+                a href="index.html"
+                  = image_tag banners.banner_images.first.asset.url
+    /! Featured
+    .row
+      .col-lg-3.col-md-3.col-sm-12
+        /! Categories
+        .col-lg-12.col-md-12.col-sm-6
+          .no-padding
+            span.title CATEGORIAS
+            - @categories.each do |categories|
+              = link_to(categories.name, category_path(categories), :class=> "list-group-item")
+          .list-group.list-categ
+        /! End Categories
+        /! Best Seller
+        .col-lg-12.col-md-12.col-sm-6
+          .no-padding
+            span.title MAIS VENDIDOS
+          - @best_sellers.each do |best_seller|
+            .hero-feature
+              .thumbnail.text-center
+                = link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work")
+                .caption.prod-caption
+                  h4
+                    a href="/details" = best_seller.name
+                  p= best_seller.description
+                  p
+                  .btn-group
+                    a.btn.btn-default href="#"
+                      | #{number_to_currency(best_seller.price)}
+                    a.btn.btn-primary href="#"
+                      i.fa.fa-shopping-cart
+                      | Comprar
+        /! End Best Seller
+      .clearfix.visible-sm
+      .col-lg-9.col-md-9.col-sm-12
+        .col-lg-12.col-sm-12
+          span.title NOVOS PRODUTOS
+        - @products.each do |products|
+          .col-lg-4.col-sm-4.hero-feature.text-center width="1"
+            .thumbnail
+              = link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work")
+              .caption.prod-caption
+                h4
+                  a href="/details" = products.name
+                p= products.description
+                p
+                .btn-group
+                  a.btn.btn-default href="#" = number_to_currency(products.price)
+                  = link_to(' Comprar', product_path(products), :class=>'btn btn-primary fa fa-shopping-cart')
+      /! End Best

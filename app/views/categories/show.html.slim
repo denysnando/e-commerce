@@ -1,0 +1,62 @@
+.container.main-container
+  .row
+    .col-lg-3.col-md-3.col-sm-12
+      .col-lg-12.col-md-12.col-sm-6
+        .no-padding
+          span.title CATEGORIAS
+          - Category.all.each do |categories|
+            a.list-group-item href="categories" = categories.name
+        .list-group.list-categ
+      /! End Categories
+      /! Marca Populares
+      .col-lg-12.col-md-12.col-sm-6
+        .no-padding
+          span.title MARCAS POPULARES
+        .list-group.list-categ
+          a.list-group-item href="catalogue.html"  Acessórios
+          a.list-group-item href="catalogue.html"  Gospel
+          a.list-group-item href="catalogue.html"  Pe. Reginaldo Manzotti
+          a.list-group-item href="catalogue.html"  Pe. Zezinho
+          a.list-group-item href="catalogue.html"  Pe. Evton
+          a.list-group-item href="catalogue.html"  Pe. Fabio de Melo
+      /! End Categories
+      /! Best Seller
+      .col-lg-12.col-md-12.col-sm-6
+        .no-padding
+          span.title MAIS VENDIDOS
+        - @best_sellers.each do |best_seller|
+          .hero-feature
+            .thumbnail.text-center
+              = link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work")
+              .caption.prod-caption
+                h4
+                  a href="/details" = best_seller.name
+                p= best_seller.description
+                p
+                .btn-group
+                  a.btn.btn-default href="#"
+                    | #{number_to_currency(best_seller.price)}
+                  a.btn.btn-primary href="#"
+                    i.fa.fa-shopping-cart
+                    | Comprar
+      /! End Best Seller
+    .clearfix.visible-sm
+    /! Catalogue
+    .col-lg-9.col-md-9.col-sm-12
+      .col-lg-12.col-sm-12
+        span.title NOVOS PRODUTOS
+      - @category.products.each do |products|
+        .col-lg-4.col-sm-4.hero-feature.text-center width="1"
+          .thumbnail
+            = link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work")
+            .caption.prod-caption
+              h4
+                a href="/details" = products.name
+              p= products.description
+              p
+              .btn-group
+                a.btn.btn-default href="#" = number_to_currency(products.price)
+                a.btn.btn-primary href="#"
+                  i.fa.fa-shopping-cart
+                  | Comprar
+    /! End Catalogue

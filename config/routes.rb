@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :purchase_orders
+  resources :purchase_order_items
   resources :categories
 
   root :to => 'welcomes#index'

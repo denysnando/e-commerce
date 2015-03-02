@@ -1,0 +1,77 @@
+.container.main-container
+  .row
+    .col-lg-12.col-md-3.col-sm-12
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        /! Cart
+        .col-lg-12.col-md-9.col-sm-12
+          .col-lg-12.col-sm-12
+            span.title NOVO CLIENTE
+          .col-lg-12.col-sm-12.hero-feature
+            table.table.table-bordered.tbl-checkout
+              tbody
+                tr
+                  td= f.label :name
+                  td
+                    = f.text_field :name, autofocus: true,:class=>'form-control'
+                  td
+                    = f.label :email
+                  td
+                    = f.text_field :email, :class=>'form-control'
+                tr
+                  td
+                    = f.label :cpf
+                  td
+                    = f.text_field :cpf, :class=>'form-control'
+                  td Telephone
+                  td
+                    input.form-control name="" type="text" /
+                tr
+                  td
+                    = f.label :zipcode
+                  td
+                    = f.text_field :zipcode, :class=>'form-control'
+                  td= f.label :street
+                  td
+                    = f.text_field :street, :class=>'form-control'
+                tr
+                  td
+                    = f.label :number
+                  td
+                    = f.text_field :number, :class=>'form-control'
+                  td
+                    = f.label :district
+                  td
+                    = f.text_field :district, :class=>'form-control'
+                tr
+                  td
+                    = f.label :state
+                  td
+                    = f.text_field :state, :class=>'form-control'
+                  td= f.label :city
+                  td
+                    = f.text_field :city, :class=>'form-control'
+                tr
+                  td
+                    = f.label :complement
+                  td colspan="3" 
+                    = f.text_area :complement, :class=>'form-control'
+                tr
+                  td
+                    = f.label :fone
+                  td
+                    = f.text_field :fone, :class=>'form-control'
+                  td= f.label :mobile
+                  td
+                    = f.text_field :mobile, :class=>'form-control'
+                tr
+                  td
+                    = f.label :password
+                  td
+                    = f.password_field :password, :class=>'form-control'
+                  td= f.label :password_confirmation
+                  td
+                    = f.password_field :password_confirmation, :class=>'form-control'
+            .btn-group.btns-cart
+              = f.submit "Criar",  :class => 'btn btn-primary'
+      /! End Cart

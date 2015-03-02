@@ -1,0 +1,18 @@
+.container.main-container
+  .row
+    .col-lg-12.col-md-3.col-sm-12
+      = devise_error_messages!
+      .col-lg-3.col-md-3.col-sm-12
+        .col-lg-12.col-md-12.col-sm-6
+          .no-padding
+            span.title Minha Conta
+          .list-group.list-categ
+            a.list-group-item href=""  Editar conta
+            a.list-group-item href=""  Cancelar Conta
+            = link_to('Meus Pedidos', purchase_orders_path, :class=> "list-group-item")
+      .clearfix.visible-sm
+      /! Cart
+      .col-lg-9.col-md-9.col-sm-12
+        .col-lg-12.col-sm-12
+          span.title CANCELAR CONTA
+        /! End Cart
