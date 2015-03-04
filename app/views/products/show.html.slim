@@ -37,40 +37,42 @@
     .clearfix.visible-sm
       /! Product Detail
     .col-lg-9.col-md-9.col-sm-12
-      .col-lg-12.col-sm-12
-        span.title  = @product.name
-      .col-lg-12.col-sm-12.hero-feature
-        .sp-wrap
-          - @product.images.each do |image|
-            = link_to image_tag(image.asset.url(:medium)), image_url(image.asset.url(:original))
-        h4 = @product.name
-        hr/
-        .description-product
-          = @product.description
-        hr/
-        h3
-          | #{number_to_currency(@product.price)}
-        .input-qty-detail
-          /!= p.input :amount, label: false, input_html: {class:'input-qty form-control text-center', value: p.object.amount || '1'}
-          /!= p.button :submit, 'Adicionar no Carrinho', :class => "btn btn-primary"
-        br/
-        hr/
-      .clearfix
-      .col-lg-12.col-sm-12
-        span.title Produtos Relacionados
-      - @products.each do |products|
-        .col-lg-4.col-sm-4.hero-feature.text-center
-          .thumbnail
-            = link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work")
-            .caption.prod-caption
-              h4
-                a href="detail.html"
-                  = products.name
-              p= products.description
-              p
-              .btn-group
-                a.btn.btn-default href="#" = number_to_currency(products.price)
-                a.btn.btn-primary href="#"
-                  i.fa.fa-shopping-cart
-                  | Comprar
-    /! End Product Detail
+      = simple_form_for @purchase_order_item, remote: true do |f|
+        = f.hidden_field :product_id, value: @product.id
+        .col-lg-12.col-sm-12
+          span.title  = @product.name
+        .col-lg-12.col-sm-12.hero-feature
+          .sp-wrap
+            - @product.images.each do |image|
+              = link_to image_tag(image.asset.url(:medium)), image_url(image.asset.url(:original))
+          h4 = @product.name
+          hr/
+          .description-product
+            = @product.description
+          hr/
+          h3
+            | #{number_to_currency(@product.price)}
+          .input-qty-detail
+            = f.input :amount, label: false, input_html: {class:'input-qty form-control text-center', value: f.object.amount || '1'}
+            = f.submit 'Adicionar no Carrinho', :class => "btn btn-primary"
+          br/
+          hr/
+        .clearfix
+        .col-lg-12.col-sm-12
+          span.title Produtos Relacionados
+        - @products.each do |products|
+          .col-lg-4.col-sm-4.hero-feature.text-center
+            .thumbnail
+              = link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work")
+              .caption.prod-caption
+                h4
+                  a href="detail.html"
+                    = products.name
+                p= products.description
+                p
+                .btn-group
+                  a.btn.btn-default href="#" = number_to_currency(products.price)
+                  a.btn.btn-primary href="#"
+                    i.fa.fa-shopping-cart
+                    | Comprar
+      /! End Product Detail

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :purchase_orders
-  resources :purchase_order_items
+  resources :purchase_order_items, only: [:create, :update, :destroy]
   resources :categories
 
   root :to => 'welcomes#index'
