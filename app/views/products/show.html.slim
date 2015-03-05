@@ -37,7 +37,7 @@
     .clearfix.visible-sm
       /! Product Detail
     .col-lg-9.col-md-9.col-sm-12
-      = simple_form_for @purchase_order_item, remote: true do |f|
+      = simple_form_for @purchase_order_item do |f|
         = f.hidden_field :product_id, value: @product.id
         .col-lg-12.col-sm-12
           span.title  = @product.name

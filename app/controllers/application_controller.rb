@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @current_purchase_order ||= if session[:purchase_order_id]
       PurchaseOrder.find(session[:purchase_order_id])
     else
-      purchase_order = PurchaseOrder.where(user_id: current_user.id, status: 'Aberto').first
+      purchase_order = PurchaseOrder.where(status: 'Aberto').first
       if purchase_order.id.nil?
         purchase_order = PurchaseOrder.create(user_id: current_user.id)
       end
