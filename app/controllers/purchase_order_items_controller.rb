@@ -17,18 +17,12 @@ class PurchaseOrderItemsController < ApplicationController
     redirect_to purchase_order_path(@purchase_order)
   end
 
-  def update
-    @purchase_order = current_order
-    @purchase_order_item = @purchase_order.purchase_order_items.find(params[:id])
-    @purchase_order_item.update_attributes(purchase_order_item_params)
-    @purchase_order_item = @purchase_order.purchase_order_items
-  end
-
   def destroy
     @purchase_order = current_order
-    @purchase_order_item = @purchase_order.order_items.find(params[:id])
+    @purchase_order_item = @purchase_order.purchase_order_items.find(params[:id])
     @purchase_order_item.destroy
     @purchase_order_item = @purchase_order.purchase_order_items
+    redirect_to purchase_order_path(@purchase_order)
   end
 
   private

@@ -41,7 +41,7 @@
                   td
                     = number_to_currency(f.object.sub_total_price)
                   td.text-center
-                    a.remove_cart href="#" rel="2"
+                    a.remove_cart href="#{url_for(purchase_order_item_path(f.object.id))}" data-method="delete"
                       i.fa.fa-trash-o
               tr
                 td align="right" colspan="5"  Total
