@@ -19,10 +19,10 @@ Financeiro
 - Ordem de Compra
 
 Tasks futuras
-- Alterando templates de erb para slim
 - Adicionar testes TDD-Rspec-Capybara
-- Carrinho de compra
-- Validar acesso para area administrativa
+- catalagos de produtos
+- cupoms
+
 Uso:
 - Rodar seed para criação do usuário administrador
 
