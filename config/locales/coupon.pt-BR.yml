@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+      models:
+        coupon: "Cupom"
+      attributes:
+        coupon:
+          id: "Código"
+          code: "Codigo do cupom"
+          value_min: "Valor mínimo"
+          coupon_type: "Tipo do cupom"
+          expiration_date: "Data de expiração"
+          amount_use: "Quantidade a usar"
+          amount_used: "Quantidade usada"
+          value_coupon: "Valor do Cupom"

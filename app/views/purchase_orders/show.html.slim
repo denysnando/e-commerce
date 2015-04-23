@@ -29,6 +29,7 @@
                 = f.input :product_id, as: :hidden, input_html: {value: f.object.product_id}
                 = f.input :_id, as: :hidden, input_html: {value: f.object.id}
                 = f.input :_destroy, as: :hidden, input_html: {value: false}
+                = f.input :user_id, as: :hidden, input_html: {value: @current_user}
                 tr
                   td.hidden-xs
                     = link_to( image_tag(f.object.product.images.first.asset.url, size: "60x60"), product_path(f.object.product.id), :class=>"work")
