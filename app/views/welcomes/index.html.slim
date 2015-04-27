@@ -56,4 +56,5 @@
                 .btn-group
                   a.btn.btn-default href="#" = number_to_currency(products.price)
                   = link_to(' Comprar', product_path(products), :class=>'btn btn-primary fa fa-shopping-cart')
+      = will_paginate @products, renderer: BootstrapPagination::Rails
       /! End Best

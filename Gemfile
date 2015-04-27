@@ -32,7 +32,9 @@ gem 'unicorn'
 #extensions views
 gem "slim"
 gem "slim-rails", :require => false
-
+#paginate
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug'
