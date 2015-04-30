@@ -32,10 +32,12 @@ gem 'unicorn'
 #extensions views
 gem "slim"
 gem "slim-rails", :require => false
-
+#paginate
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
-  gem 'pry'
+  gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
