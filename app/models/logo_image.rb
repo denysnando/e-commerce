@@ -12,6 +12,6 @@ class LogoImage < ActiveRecord::Base
    before_validation { self.asset.clear if self.delete_asset == '1' }
 
    rails_admin do
-    visible false
-   end
+    navigation_label 'Cadastros'
+  end
 end
