@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+      models:
+        coupon_type: "Tipo de cupom"
+      attributes:
+        coupon_type:
+          id: "Código"
+          name: "Nome"
