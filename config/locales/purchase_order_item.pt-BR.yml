@@ -7,4 +7,6 @@ pt-BR:
           id: "Código:"
           sub_total_price: "Sub Total"
           purchase_order: "Ordem de Compra"
+          amount: "Quantidade:"
+          product: "Produto:"
 

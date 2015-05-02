@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title Procade Ecommerce
+    title E-commerce Loja Virtual
     = stylesheet_link_tag    '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -14,7 +14,7 @@ html
           .col-lg-4.col-md-3.hidden-sm.hidden-xs
             .well.logo
               a href="/"
-                = image_tag 'ProcadeLogo.png'
+                /! adicionar img da logo = image_tag 'ProcadeLogo.png'
                 span Loja online
           /! End Logo
           /! Search Form
@@ -68,7 +68,6 @@ html
             li= link_to 'Meus Pedidos', purchase_orders_path
             li= link_to 'Minha conta', edit_user_registration_path
             li
-              a href=""  CORRENTE DE ORAÇÃO
           ul.nav.navbar-nav.navbar-right
             - if !user_signed_in?
               li= link_to 'Entrar ou Cadastrar', user_session_path
