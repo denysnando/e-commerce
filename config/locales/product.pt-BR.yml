@@ -10,3 +10,5 @@ pt-BR:
           price: "Valor de Venda:"
           images: "Imagens"
           product_categories: "Categorias"
+          product_sizes: "Tamanhos"
+          amount: "Quantidade Total"

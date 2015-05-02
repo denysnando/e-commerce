@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+      models:
+        product_size: "Tamanhos do Produto"
+      attributes:
+        product_size:
+          id: "Código:"
+          name: "Tamanho:"
+          amout: "Quantidade:"
+          color: "Cor:"
