@@ -3,7 +3,6 @@ E-commerce
 Em desenvolvimento, tende a ser um e-commerce genérico onde é possivel
 ser utilizada em diversos clientes, usando area administrativa com rails_admin
 
-
 Cadastros Atuais.
 
 - Empresa
@@ -13,6 +12,7 @@ Cadastros Atuais.
 - Logo Empresa
 - Categorias
 - Cliente
+- Cupoms
 
 Financeiro
 
@@ -21,7 +21,7 @@ Financeiro
 Tasks futuras
 - Adicionar testes TDD-Rspec-Capybara
 - catalagos de produtos
-- cupoms
+
 
 Uso:
 - Rodar seed para criação do usuário administrador
