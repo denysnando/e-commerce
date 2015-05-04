@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+      models:
+        sub_category: "SubCategorias"
+      attributes:
+        sub_category:
+          id: "Código:"
+          name: "Nome:"
+          sub_category: "SubCategoria:"

@@ -1,7 +1,7 @@
-class Category < ActiveRecord::Base
+class SubCategory < ActiveRecord::Base
   has_many :product_categories
   has_many :products, through: :product_categories
-  belongs_to :sub_category, inverse_of: :category
+  belongs_to :category, inverse_of: :sub_category
 
   rails_admin do
    navigation_label 'Cadastros'
@@ -11,6 +11,7 @@ class Category < ActiveRecord::Base
    end
    edit do
     field :name
+    field :category
    end
   end
 end

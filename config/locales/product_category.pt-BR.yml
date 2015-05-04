@@ -7,3 +7,5 @@ pt-BR:
           product_id: "Produto"
           category_id: "Categoria"
           category: "Categoria"
+          sub_category: "Subcategoria"
+
