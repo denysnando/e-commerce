@@ -8,6 +8,7 @@ class SubCategory < ActiveRecord::Base
    list do
     field :id
     field :name
+    field :category
    end
    edit do
     field :name

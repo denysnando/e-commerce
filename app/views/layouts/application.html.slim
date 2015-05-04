@@ -22,7 +22,7 @@ html
             .well
               form action=""
                 .input-group
-                  input.form-control.input-search placeholder=("Digite algo para pesquisar:") type="text" /
+                  input.form-control.input-search placeholder=("Digite algo para pesquisar: ") type="text" /
                   span.input-group-btn
                     button.btn.btn-default.no-border-left type="submit"
                       i.fa.fa-search
@@ -31,24 +31,32 @@ html
           .col-lg-3.col-md-4.col-sm-5
             .well
               .btn-group.btn-group-cart
-                - PurchaseOrder.find(status: 'Aberto') do |purchase|
-                  button.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button"
-                    span.pull-left
-                      i.fa.fa-shopping-cart.icon-cart
-                    span.pull-left
-                      | Carrinho de Compra: #{purchase.purchase_order_items.count} item(s)
-                    span.pull-right
-                      i.fa.fa-caret-down
-                  ul.dropdown-menu.cart-content role="menu"
-                    - purchase.purchase_order_items.each do |p|
-                      li
-                        b
-                          = link_to(p.product.name, product_path(p.product), class: 'stand')
-                        span.stand-price
-                          | x#{p.amount.round(0)} #{number_to_currency(p.product.price)}
-                    li.divider
-                    span.stand
-                      = link_to 'Total: ' + number_to_currency(purchase.total_price),  purchase_order_path(purchase)
+                - if (current_user && PurchaseOrder.all.nil?)
+                  - PurchaseOrder.find(status: 'Aberto') do |purchase|
+                    button.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button"
+                      span.pull-left
+                        i.fa.fa-shopping-cart.icon-cart
+                      span.pull-left
+                        | Carrinho de Compra: #{purchase.purchase_order_items.count} item(s)
+                      span.pull-right
+                        i.fa.fa-caret-down
+                    ul.dropdown-menu.cart-content role="menu"
+                      - purchase.purchase_order_items.each do |p|
+                        li
+                          b
+                            = link_to(truncate(p.product.name, length: 23), product_path(p.product), class: 'stand')
+                          span.stand-price
+                            | x#{p.amount.round(0)} #{number_to_currency(p.product.price)}
+                      li.divider
+                      span.stand
+                        = link_to 'Total: ' + number_to_currency(purchase.total_price),  purchase_order_path(purchase)
+                - else
+                    button.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button"
+                      span.pull-left
+                        i.fa.fa-shopping-cart.icon-cart
+                      span.pull-left
+                        | Carrinho de Compra: 0 item(s)
+
           /! End Shopping Cart List
     /! Navigation
     nav.navbar.navbar-inverse role="navigation"

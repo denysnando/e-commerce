@@ -30,13 +30,13 @@
                 = link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work")
                 .caption.prod-caption
                   h4
-                    a href="/details" = best_seller.name
-                  p= best_seller.description
+                    a = truncate(best_seller.name, length: 23 )
+                  p= truncate(best_seller.description, length: 30 )
                   p
                   .btn-group
-                    a.btn.btn-default href="#"
+                    a.btn.btn-default
                       | #{number_to_currency(best_seller.price)}
-                    a.btn.btn-primary href="#"
+                    a.btn.btn-primary
                       i.fa.fa-shopping-cart
                       | Comprar
         /! End Best Seller
@@ -50,11 +50,11 @@
               = link_to( image_tag(products.images.first.asset.url), product_path(products), :class=>"work")
               .caption.prod-caption
                 h4
-                  a href="/details" = products.name
-                p= products.description
+                  a = truncate(products.name, length: 23 )
+                p= truncate(products.description, length: 30 )
                 p
                 .btn-group
-                  a.btn.btn-default href="#" = number_to_currency(products.price)
+                  a.btn.btn-default = number_to_currency(products.price)
                   = link_to(' Comprar', product_path(products), :class=>'btn btn-primary fa fa-shopping-cart')
       = will_paginate @products, renderer: BootstrapPagination::Rails
       /! End Best

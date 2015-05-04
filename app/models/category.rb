@@ -3,6 +3,10 @@ class Category < ActiveRecord::Base
   has_many :products, through: :product_categories
   belongs_to :sub_category, inverse_of: :category
 
+  def to_s
+    name
+  end
+
   rails_admin do
    navigation_label 'Cadastros'
    list do

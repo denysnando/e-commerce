@@ -10,8 +10,8 @@
             = link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work")
             .caption.prod-caption
               h4
-                a href="/details" = best_seller.name
-              p= best_seller.description
+                a href="/details" = truncate(best_seller.name, length: 23 )
+              p= truncate(best_seller.description, length: 30 )
               p
               .btn-group
                 a.btn.btn-default href="#"
@@ -24,8 +24,8 @@
             = link_to( image_tag(best_seller.images.first.asset.url), product_path(best_seller), :class=>"work")
             .caption.prod-caption
               h4
-                a href="/details" = best_seller.name
-              p= best_seller.description
+                a href="/details" = truncate(best_seller.name, length: 23 )
+              p= truncate(best_seller.description, length: 30 )
               p
               .btn-group
                 a.btn.btn-default href="#"
@@ -67,8 +67,8 @@
               .caption.prod-caption
                 h4
                   a href="detail.html"
-                    = products.name
-                p= products.description
+                    = truncate(products.name, length: 23 )
+                  p= truncate(products.description, length: 30 )
                 p
                 .btn-group
                   a.btn.btn-default href="#" = number_to_currency(products.price)
